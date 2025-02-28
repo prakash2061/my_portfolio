@@ -1,0 +1,262 @@
+:root {
+  --hologram-blue: #00f3ff;
+  --quantum-purple: #bc00ff;
+  --dark-matter: #0a0a12;
+  --neon-glow: 0 0 15px var(--hologram-blue), 0 0 30px var(--quantum-purple);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: radial-gradient(
+    circle at center,
+    var(--dark-matter) 0%,
+    #000033 100%
+  );
+  min-height: 100vh;
+  font-family: "Courier New", monospace;
+  color: var(--hologram-blue);
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.construction-zone {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  flex: 1;
+  perspective: 1000px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.reality-header {
+  font-size: clamp(2rem, 10vw, 6rem);
+  text-align: center;
+  text-transform: uppercase;
+  position: relative;
+  margin: clamp(2rem, 5vw, 4rem) 0;
+  text-shadow: var(--neon-glow);
+  animation: quantum-flux 3s infinite;
+  line-height: 1.2;
+  padding: 0 1rem;
+}
+
+.reality-header::before,
+.reality-header::after {
+  content: "REALITY ENGINE v0.8";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+}
+
+.reality-header::before {
+  color: var(--quantum-purple);
+  animation: glitch 2s infinite;
+  clip-path: polygon(0 30%, 100% 40%, 100% 60%, 0 50%);
+}
+
+.reality-header::after {
+  color: var(--hologram-blue);
+  animation: glitch 2.5s infinite reverse;
+  clip-path: polygon(0 60%, 100% 50%, 100% 70%, 0 80%);
+}
+
+.dimensional-status {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  gap: clamp(1rem, 3vw, 2rem);
+  margin: clamp(2rem, 5vw, 4rem) 0;
+  padding: 0 1rem;
+}
+
+.reality-panel {
+  background: rgba(0, 0, 0, 0.3);
+  border: 2px solid var(--hologram-blue);
+  padding: clamp(1rem, 3vw, 2rem);
+  position: relative;
+  transition: transform 0.3s;
+  backdrop-filter: blur(5px);
+}
+
+.quantum-progress {
+  height: clamp(15px, 3vw, 20px);
+  background: rgba(255, 255, 255, 0.1);
+  margin: clamp(1rem, 3vw, 2rem) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.quantum-progress::after {
+  content: "";
+  position: absolute;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--hologram-blue),
+    transparent
+  );
+  animation: reality-build 3s infinite;
+}
+
+.constructor-bots {
+  display: flex;
+  justify-content: center;
+  gap: clamp(1rem, 3vw, 2rem);
+  margin-top: clamp(2rem, 5vw, 4rem);
+  flex-wrap: wrap;
+}
+
+.nanobot {
+  width: clamp(30px, 8vw, 50px);
+  height: clamp(30px, 8vw, 50px);
+  background: var(--hologram-blue);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  animation: bot-float 3s infinite;
+}
+
+.reality-message {
+  text-align: center;
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  margin: clamp(1rem, 3vw, 2rem) 0;
+  line-height: 1.6;
+  opacity: 0.8;
+  padding: 0 1rem;
+}
+
+.singularity-button {
+  background: transparent;
+  border: 2px solid var(--quantum-purple);
+  color: var(--quantum-purple);
+  padding: clamp(0.75rem, 3vw, 1rem) clamp(1.5rem, 4vw, 2rem);
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  margin: 2rem auto;
+  display: block;
+}
+
+.singularity-button:hover {
+  background: rgba(188, 0, 255, 0.1);
+  box-shadow: 0 0 20px var(--quantum-purple);
+}
+
+.reality-grid {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+      90deg,
+      rgba(0, 243, 255, 0.05) 0 1px,
+      transparent 1px 20px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(188, 0, 255, 0.05) 0 1px,
+      transparent 1px 20px
+    );
+  pointer-events: none;
+  z-index: -1;
+}
+
+.quantum-particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@media (max-width: 768px) {
+  .construction-zone {
+    padding: 1.5rem;
+    justify-content: safe center;
+  }
+
+  .dimensional-status {
+    grid-template-columns: 1fr;
+    margin: 3rem 0;
+  }
+
+  .singularity-button {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@keyframes quantum-flux {
+  0%,
+  100% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-5px, 3px) skew(-2deg);
+  }
+  40% {
+    transform: translate(3px, -2px) skew(1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0.5deg);
+  }
+  80% {
+    transform: translate(2px, -3px) rotate(-0.5deg);
+  }
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-3px, 5px);
+  }
+  40% {
+    transform: translate(5px, -3px);
+  }
+  60% {
+    transform: translate(-5px, 2px);
+  }
+  80% {
+    transform: translate(2px, -5px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+@keyframes reality-build {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 200%;
+  }
+}
+
+@keyframes bot-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}

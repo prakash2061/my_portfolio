@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blogs | Prajwal Panth</title>
+
+    <!-- Favicon link (PNG) -->
+    <link rel="icon" href="../assets/img/logo.ico" type="image/x-icon" />
+
+    <!--==============Page Specific CSS: Top Level==============-->
+    <link rel="stylesheet" href="../assets/css/blogs1.css" />
+    <!--==============CORE CSS==============-->
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <!-- Necessary Icons: unicons.iconscout for content & cdnjs for footer -->
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+
+  <body oncontextmenu="return false">
+    <!-- Navigation -->
+    <header class="header" id="header">
+      <nav class="nav container">
+        <a href="../index.html" class="nav__logo">Prajwal Panth</a>
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list grid">
+            <li class="nav__item">
+              <a href="../index.html" class="nav__link active-link">
+                <i class="uil uil-estate nav__icon"></i>Home
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="about.html" class="nav__link">
+                <i class="uil uil-user nav__icon"></i>About
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="projects.html" class="nav__link">
+                <i class="uil uil-scenery nav__icon"></i>Projects
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="research.html" class="nav__link">
+                <i class="uil uil-flask nav__icon"></i>Research
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="achievements.html" class="nav__link">
+                <i class="uil uil-trophy nav__icon"></i>Awards & Honors
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="blogs.html" class="nav__link">
+                <i class="uil uil-pen nav__icon"></i>Blogs
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="contact.html" class="nav__link">
+                <i class="uil uil-message nav__icon"></i>Contact
+              </a>
+            </li>
+          </ul>
+          <i class="uil uil-times nav__close" id="nav-close"></i>
+        </div>
+
+        <div class="nav__btns">
+          <!-- Theme change button -->
+          <i class="uil uil-moon change-theme" id="theme-button"></i>
+
+          <div class="nav__toggle" id="nav-toggle">
+            <i class="uil uil-apps"></i>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- main-->
+
+    <main class="main">
+      <!--=================== Blogs ===================-->
+
+      <h2 class="section__title">Blogs</h2>
+
+      <div class="blog-search">
+        <input
+          type="text"
+          class="blog-search__input"
+          placeholder="Search blog posts..."
+          aria-label="Search blog posts"
+        />
+        <i class="fas fa-search blog-search__icon"></i>
+      </div>
+      <section class="blog-section">
+        <div
+          class="qualification__button button--flex qualification__active"
+          data-target="#education"
+        >
+          <i class="uil uil-file-alt qualification__icon"></i>
+          Articles
+        </div>
+        <section class="blog-grid">
+          <!-- Blog Post 1 -->
+          <article
+            class="blog-card"
+            onclick="window.location.href='../pages/blogs/exclusive.html'"
+            title="The Vault"
+          >
+            <span class="blog-card__tooltip">Featured Post</span>
+            <img
+              src="../assets/img/blogs/blog5.webp"
+              alt="Vault"
+              class="blog-card__image"
+            />
+            <div class="blog-card__content">
+              <h2 class="blog-card__title">The Vault</h2>
+              <p class="blog-card__excerpt">
+                A members-only space for in-depth resources and special content.
+                <strong>Page Under Development</strong>
+              </p>
+              <div class="blog-card__meta">
+                <span class="meta-item date"
+                  ><i class="fas fa-calendar-alt"></i>Feb 21</span
+                >
+                <span class="meta-item read-time"
+                  ><i class="fas fa-clock"></i>-</span
+                >
+                <span class="meta-item tag"
+                  ><i class="fas fa-tag blog-meta-icon"></i>Exclusive
+                  Pages</span
+                >
+              </div>
+            </div>
+          </article>
+          <!-- Blog Post 2 -->
+          <article
+            class="blog-card"
+            onclick="window.location.href='../pages/blogs/best.html'"
+            title="The Best"
+          >
+            <span class="blog-card__tooltip">Featured Post</span>
+            <img
+              src="../assets/img/blogs/blog6.webp"
+              alt="Best"
+              class="blog-card__image"
+            />
+            <div class="blog-card__content">
+              <h2 class="blog-card__title">The Best</h2>
+              <p class="blog-card__excerpt">
+                An experimental page that explores the paradox of perfection.
+                Does "best" truly exist, or is it a fleeting illusion shaped by
+                context and perspective?
+              </p>
+              <div class="blog-card__meta">
+                <span class="meta-item date"
+                  ><i class="fas fa-calendar-alt"></i>Feb 22</span
+                >
+                <span class="meta-item read-time"
+                  ><i class="fas fa-clock"></i>-</span
+                >
+                <span class="meta-item tag"
+                  ><i class="fas fa-tag blog-meta-icon"></i>Experimental
+                  Page</span
+                >
+              </div>
+            </div>
+          </article>
+          <!-- Blog Post 3 -->
+          <article
+            class="blog-card"
+            onclick="window.location.href='../pages/blogs/LNN.html'"
+            title="Liquid Neural Network"
+          >
+            <span class="blog-card__tooltip">New Post</span>
+            <img
+              src="../assets/img/blogs/blog7.webp"
+              alt="Liquid Neural Network"
+              class="blog-card__image"
+            />
+            <div class="blog-card__content">
+              <h2 class="blog-card__title">Liquid Neural Network</h2>
+              <p class="blog-card__excerpt">
+                This article dives into how Asimov's sci-fi concepts align with
+                or fail modern AI advancements.
+              </p>
+              <div class="blog-card__meta">
+                <span class="meta-item date"
+                  ><i class="fas fa-calendar-alt"></i>Jul 29</span
+                >
+                <span class="meta-item read-time"
+                  ><i class="fas fa-clock"></i>3 min read</span
+                >
+                <span class="meta-item tag"
+                  ><i class="fas fa-tag blog-meta-icon"></i>Machine Learning</span
+                >
+              </div>
+            </div>
+          </article>
+          <!-- Blog Post 4 -->
+          <article
+            class="blog-card"
+            onclick="window.location.href='https:\\/medium.com/@prajwal_panth/the-many-roles-of-a-teacher-and-the-essence-of-the-guru-c5742735ebc7'"
+            title="The Many Roles of a Teacher and the Essence of the Guru"
+          >
+            <span class="blog-card__tooltip">New Post</span>
+            <img
+              src="../assets/img/blogs/blog8.webp"
+              alt="Guru"
+              class="blog-card__image"
+            />
+            <div class="blog-card__content">
+              <h2 class="blog-card__title">
+                The Many Roles of a Teacher and the Essence of the Guru
+              </h2>
+              <p class="blog-card__excerpt">
+                Is every teacher a Guru, or is there a deeper distinction?
+                <br />
+                When we think of a teacher, the term conjures images of
+                classrooms, textbooks, and a figure imparting knowledge to
+                students. But in the rich tapestry of Indian tradition, the word
+                “teacher” doesn't directly translate to the Sanskrit term
+                “Guru.” The Sanskrit language provides nuanced distinctions for
+                educators, mentors, and spiritual guides, each fulfilling
+                distinct roles and responsibilities. Let's explore these
+                distinctions and their profound meanings.
+              </p>
+              <div class="blog-card__meta">
+                <span class="meta-item date"
+                  ><i class="fas fa-calendar-alt"></i>Jul 24</span
+                >
+                <span class="meta-item read-time"
+                  ><i class="fas fa-clock"></i>4 min read</span
+                >
+                <span class="meta-item tag"
+                  ><i class="fas fa-tag blog-meta-icon"></i>Guru</span
+                >
+              </div>
+            </div>
+          </article>
+          <!-- Blog Post 5 -->
+          <article
+            class="blog-card"
+            onclick="window.location.href='https:/\/medium.com/@prajwal_panth/asimovs-three-laws-of-robotics-9b57fc2bfe3b'"
+            title="Asimov's Three Laws of Robotics"
+          >
+            <span class="blog-card__tooltip">New Post</span>
+            <img
+              src="../assets/img/blogs/blog9.webp"
+              alt="Robot"
+              class="blog-card__image"
+            />
+            <div class="blog-card__content">
+              <h2 class="blog-card__title">Asimov's Three Laws of Robotics</h2>
+              <p class="blog-card__excerpt">
+                This article dives into how Asimov's sci-fi concepts align with
+                or fail modern AI advancements.
+              </p>
+              <div class="blog-card__meta">
+                <span class="meta-item date"
+                  ><i class="fas fa-calendar-alt"></i>Jul 29</span
+                >
+                <span class="meta-item read-time"
+                  ><i class="fas fa-clock"></i>3 min read</span
+                >
+                <span class="meta-item tag"
+                  ><i class="fas fa-tag blog-meta-icon"></i>STEM</span
+                >
+              </div>
+            </div>
+          </article>
+        </section>
+      </section>
+      <div class="loading-dots">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <section class="blog-section">
+        <div
+          class="qualification__button button--flex qualification__active"
+          data-target="#education"
+        >
+          <i class="uil uil-pen qualification__icon"></i>
+          Poems
+        </div>
+        <br />
+        <div class="portfolio">
+          <div class="card">
+            <!-- inside <a after href: target="_blank" before styles-->
+            <a
+              href="https://medium.com/catharsis-chronicles/whispers-of-infinity-c595327e7e5b"
+              style="text-decoration: none; color: inherit"
+            >
+              <img src="../assets/img/blogs/blog1.webp" alt="Project Image" />
+              <div class="card-content">
+                <h3>Whispers of Infinity</h3>
+                <p>
+                  Ever wondered what the stars whisper to the infinite night?
+                  Explore this cosmic journey of poetry and discover meaning
+                  among the constellations. ✨
+                </p>
+              </div>
+            </a>
+          </div>
+
+          <div class="card">
+            <a
+              href="https://medium.com/catharsis-chronicles/the-crack-in-the-glass-fffa14a29108"
+              style="text-decoration: none; color: inherit"
+            >
+              <img src="../assets/img/blogs/blog2.webp" alt="Project Image" />
+              <div class="card-content">
+                <h3>The Crack in the Glass</h3>
+                <p>
+                  In a world that demands conformity, this poem explores
+                  identity, power, and the courage to defy expectations. Written
+                  in fragments during a time of personal struggle, this poem is
+                  a reminder that the cracks we're taught to hide are often
+                  where the light shines through. 🌟
+                </p>
+              </div>
+            </a>
+          </div>
+
+          <div class="card">
+            <a
+              href="https://medium.com/catharsis-chronicles/the-weight-of-symmetry-f72891bce433"
+              style="text-decoration: none; color: inherit"
+            >
+              <img src="../assets/img/blogs/blog3.webp" alt="Project Image" />
+              <div class="card-content">
+                <h3>The Weight of Symmetry</h3>
+                <p>
+                  In a world obsessed with perfection, this poem offers a quiet
+                  rebellion against the patterns we are taught to follow. <br />
+                  How do you see yourself in its reflection? 🌟
+                </p>
+              </div>
+            </a>
+          </div>
+
+          <div class="card">
+            <a
+              href="https://medium.com/catharsis-chronicles/the-inherent-dance-cce1a7ed9683"
+              style="text-decoration: none; color: inherit"
+            >
+              <img src="../assets/img/blogs/blog4.webp" alt="Project Image" />
+              <div class="card-content">
+                <h3>The Inherent Dance</h3>
+                <p>
+                  This poem explores the paradoxical nature of human existence,
+                  where altruism and ambition, generosity and self-interest
+                  intertwine. 🌍 Through probing questions about motives,
+                  legacy, and human nature, it calls for a balanced view of
+                  life, embracing imperfections while uncovering the true
+                  essence of human intentions in everyday actions. 🌟
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <div><br /><br /></div>
+      <div class="home__img">
+        <a
+          href="https://medium.com/@prajwal_panth"
+          target="_blank"
+          class="button button--flex"
+        >
+          <i class="fas fa-blog button__icon"></i>&nbsp;&nbsp; More Blogs
+        </a>
+      </div>
+    </main>
+    <!--================== Footer ===============-->
+    <footer class="footer">
+      <div class="footer__bg">
+        <div class="footer__container container">
+          <p class="footer__copyright">
+            <a
+              href="../index.html"
+              style="text-decoration: none; color: inherit"
+            >
+              Copyright © <span id="currentYear"></span> | Prajwal Panth | All
+              Rights Reserved.
+            </a>
+          </p>
+          <div class="footer__social">
+            <a
+              href="https://www.linkedin.com/in/prajwal-panth/"
+              target="_blank"
+              class="footer__social-link"
+            >
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a
+              href="https://github.com/prajwal-panth"
+              target="_blank"
+              class="footer__social-link"
+            >
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a
+              href="https://medium.com/@prajwal_panth"
+              target="_blank"
+              class="footer__social-link"
+            >
+              <i class="fa-brands fa-medium"></i>
+            </a>
+            <a
+              href="https://www.facebook.com/panth.prajwal"
+              target="_blank"
+              class="footer__social-link"
+            >
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Automatically update the year
+      document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+    </script>
+    <!--================== SCROLL TOP ==================-->
+    <a href="#" class="scrollup" id="scroll-up">
+      <i class="uil uil-arrow-up scrollup__icon"></i>
+    </a>
+    <!--================Page Specific JS================-->
+    <script src="../assets/js/blogs1.js"></script>
+    <!--================== Core JS ==================-->
+    <script src="../assets/js/theme&swiper.js"></script>
+    <script src="../assets/js/main.js"></script>
+  </body>
+</html>

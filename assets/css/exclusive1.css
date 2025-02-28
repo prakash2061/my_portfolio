@@ -1,0 +1,232 @@
+/* =========================================================================
+1. Base Structure
+========================================================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  padding-top: var(--header-height); /* Create space for mobile top header */
+  /* Add safe area padding for mobile browsers */
+  /* padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); */
+}
+@media (max-width: 768px) {
+  main{
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+  }
+  body {
+    padding-top: 0rem; 
+  }
+} 
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Adjusted padding calculation */
+  padding: calc(var(--header-height) + 2rem) 1rem calc(var(--header-height) + 4rem);
+  width: 100%;
+  position: relative;
+}
+
+.header {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  background-color: var(--body-color);
+  /* Add height definition */
+  height: var(--header-height);
+}
+
+/* Add this new rule to create header space */
+body::after {
+  content: '';
+  display: block;
+  height: var(--header-height);
+  visibility: hidden;
+}
+
+/* =========================================================================
+ 2. Gallery Container
+========================================================================= */
+/* The main container is a square. We do NOT apply border-radius here,
+       so we avoid any unwanted clipping that causes a “star” gap. */
+       .gallery-container {
+        --size: min(600px, 80vh); /* Use viewport height for better scaling */
+        position: relative;
+        width: var(--size);
+        height: var(--size);
+        margin: 2rem auto; /* Center horizontally */
+        /* Create space for header */
+        transform: translateY(calc(var(--header-height) * 0.5));
+      }
+
+/* =========================================================================
+       2. Quarter-Circle Slice: 
+          - Each slice is absolutely positioned to fill the container.
+          - A custom clipPath defines exactly one quadrant of the circle.
+          - We rotate each slice by 0°, 90°, 180°, or 270° to form the full circle.
+       ========================================================================= */
+.slice {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Use the same base clipPath (the top-right wedge), 
+         but rotate it via --rotation to place it in the correct quadrant. */
+  clip-path: url(#top-right-wedge);
+  transform: rotate(var(--rotation));
+  transform-origin: 50% 50%;
+  transition: clip-path 0.6s ease, transform 0.6s ease;
+  cursor: pointer;
+  z-index: 1;
+  /* Optional entrance animation for a polished effect */
+  animation: sliceEntrance 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Stagger the slice entrances for a cascading reveal */
+.slice:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.slice:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.slice:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.slice:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+/* Quarter circle changes to a full circle on hover, covering the container */
+.slice:hover {
+  clip-path: circle(50% at 50% 50%);
+  transform: rotate(var(--rotation)) scale(1.05);
+  z-index: 10;
+}
+
+/* =========================================================================
+       3. Slice Content: Background Images
+       ========================================================================= */
+.slice-content {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  /* Counter-rotate the image content so it remains upright 
+         (undo the parent’s rotation). */
+  transform: rotate(calc(-1 * var(--rotation)));
+  transition: transform 0.6s ease, filter 0.6s ease;
+}
+
+/* On hover, scale and brighten the image slightly */
+.slice:hover .slice-content {
+  transform: rotate(calc(-1 * var(--rotation))) scale(1.1);
+  filter: brightness(1.05) saturate(1.1);
+}
+
+/* =========================================================================
+       4. Tooltip (Optional)
+          - Always upright, because we counter-rotate it by -var(--rotation).
+          - Positioned in the center of the slice, hidden by default, 
+            shown on hover.
+       ========================================================================= */
+.tooltip {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(calc(-1 * var(--rotation)));
+  background: rgba(20, 20, 20, 0.95);
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(4px);
+  white-space: nowrap;
+  z-index: 101; /* Updated from 11 to 101 */
+}
+
+.slice:hover .tooltip {
+  opacity: 1;
+}
+
+/* =========================================================================
+       5. Optional Click-to-Activate Behavior
+          - If you want a click to lock the slice in full circle mode, 
+            we can do so with a .slice.active class. 
+          - Below is a simple example. (Comment out if you don’t need it.)
+       ========================================================================= */
+.slice.active {
+  clip-path: circle(50% at 50% 50%);
+  transform: rotate(var(--rotation)) scale(1.1);
+  z-index: 15;
+}
+.slice.active .slice-content {
+  transform: rotate(calc(-1 * var(--rotation))) scale(1.1);
+  filter: brightness(1.1) saturate(1.2);
+}
+
+/* =========================================================================
+       6. Keyframes for Entrance Animation
+       ========================================================================= */
+@keyframes sliceEntrance {
+  0% {
+    opacity: 0;
+    transform: rotate(var(--rotation)) scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(var(--rotation)) scale(1);
+  }
+}
+
+/* =========================================================================
+       7. Responsive Adjustments
+       ========================================================================= */
+@media (max-width: 768px) {
+  .gallery-container {
+    --size: 400px;
+  }
+  .tooltip {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .gallery-container {
+    --size: 300px;
+  }
+  .tooltip {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+/* =========================================================================
+       8. Accessibility: Focus Styles for Keyboard Navigation
+       ========================================================================= */
+.slice:focus {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}

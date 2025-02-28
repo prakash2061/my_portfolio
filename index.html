@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prajwal Panth | CSE Student</title>
+
+    <!-- Favicon link (PNG) -->
+    <link rel="icon" href="../assets/img/logo.ico" type="image/x-icon" />
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <!-- Necessary Icons: unicons.iconscout for content & cdnjs for footer -->
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+
+  <body oncontextmenu="return false">
+    <!-- Navigation -->
+    <header class="header" id="header">
+      <nav class="nav container">
+        <a href="index.html" class="nav__logo">Prajwal Panth</a>
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list grid">
+            <li class="nav__item">
+              <a href="index.html" class="nav__link active-link">
+                <i class="uil uil-estate nav__icon"></i>Home
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="pages/about.html" class="nav__link">
+                <i class="uil uil-user nav__icon"></i>About
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="pages/projects.html" class="nav__link">
+                <i class="uil uil-scenery nav__icon"></i>Projects
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="pages/research.html" class="nav__link">
+                <i class="uil uil-flask nav__icon"></i>Research
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="pages/achievements.html" class="nav__link">
+                <i class="uil uil-trophy nav__icon"></i>Awards & Honors
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="pages/blogs.html" class="nav__link">
+                <i class="uil uil-pen nav__icon"></i>Blogs
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="pages/contact.html" class="nav__link">
+                <i class="uil uil-message nav__icon"></i>Contact
+              </a>
+            </li>
+          </ul>
+          <i class="uil uil-times nav__close" id="nav-close"></i>
+        </div>
+
+        <div class="nav__btns">
+          <!-- Theme change button -->
+          <i class="uil uil-moon change-theme" id="theme-button"></i>
+
+          <div class="nav__toggle" id="nav-toggle">
+            <i class="uil uil-apps"></i>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- main-->
+    <main class="main">
+      <section class="home section" id="home">
+        <div class="home__container container grid">
+          <div class="home__content grid">
+            <!--=====================Links =====================-->
+            <div class="home__social">
+              <a
+                href="https://www.linkedin.com/in/prajwal-panth/"
+                target="_blank"
+                class="home__social-icon"
+              >
+                <i class="uil uil-linkedin-alt"></i>
+              </a>
+              <a
+                href="https://github.com/prajwal-panth"
+                target="_blank"
+                class="home__social-icon"
+              >
+                <i class="fa-brands fa-medium"></i>
+              </a>
+              <a
+                href="https://medium.com/@prajwal_panth"
+                target="_blank"
+                class="home__social-icon"
+              >
+                <i class="uil uil-github-alt"></i>
+              </a>
+              <a
+                href="https://www.facebook.com/panth.prajwal"
+                target="_blank"
+                class="home__social-icon"
+              >
+                <i class="uil uil-facebook-f"></i>
+              </a>
+            </div>
+            <!-- Home Picture-->
+            <div class="home__img">
+              <svg
+                class="profile__blob"
+                viewBox="0 0 200 250"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <mask id="mask0" mask-type="alpha">
+                  <!-- Rounded rectangle mask -->
+                  <rect
+                    x="0"
+                    y="0"
+                    width="200"
+                    height="250"
+                    rx="20"
+                    ry="20"
+                    fill="white"
+                  />
+                </mask>
+                <g mask="url(#mask0)">
+                  <image
+                    class="profile__blob-img"
+                    x="0"
+                    y="0"
+                    width="200"
+                    height="250"
+                    xlink:href="assets/img/profile.jpg"
+                    preserveAspectRatio="xMidYMid slice"
+                  />
+                </g>
+              </svg>
+            </div>
+            <div class="home__data">
+              <h1 class="home__title">Namaste, I'm Prajwal Panth</h1>
+              <h3 class="home__subtitle">
+                Computer Science & Engineering Student
+              </h3>
+              <p class="home__description">
+                A third-year undergraduate engineering student at
+                <strong
+                  >Kalinga Institute of Industrial Technology (KIIT)</strong
+                >, Bhubaneswar.
+              </p>
+              <a href="pages/about.html" class="button button--flex">
+                <i class="uil uil-user-circle button__icon"></i>&nbsp;&nbsp;More
+                about me
+              </a>
+            </div>
+          </div>
+          <!-- Closing .home__content -->
+          <div class="home__scroll">
+            <a href="#about" class="home__scroll-button button--flex">
+              <i class="uil uil-mouse-alt home__scroll-mouse"></i>
+              <span class="home__scroll-name">Scroll down</span>
+              <i class="uil uil-arrow-down home__scroll-arrow"></i>
+            </a>
+          </div>
+          <!-- Closing .home__container -->
+        </div>
+      </section>
+      <div><br /></div>
+      <section class="skills section" id="skills">
+        <div class="skills-container">
+          <div class="notice-content">
+            <h3 class="notice-title">⚠️ Website Under Construction</h3>
+            <p class="notice-text">
+              This website is currently under development. Some information may
+              be incomplete or missing. However, it is being displayed for
+              certain reasons. Thank you for your patience!
+            </p>
+            <p class="notice-text" style="text-align: center;">
+              🌙 For a better experience, try the <strong>dark theme</strong>!
+            </p>
+          </div>
+        </div>
+      </section>
+      <div class="loading-dots">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <!--======================= Feature Projects ========================-->
+      <section class="skills section" id="skills">
+        <h2 class="section__title">Featured Projects</h2>
+        <br />
+        <div class="skills-container">
+          <div class="feature-proj-grid">
+            <div class="feature-proj-card">
+              <img src="assets/img/projects_logo/a.png" alt="Veggies Logo" />
+              <h3>Note Ninza</h3>
+              <p>Audio Transcriber & Summarizer</p>
+            </div>
+            <div class="feature-proj-card">
+              <img src="assets/img/projects_logo/b.png" alt="EaseMed Logo" />
+              <h3>ImgGen</h3>
+              <p>Custom Tool for Image Generation</p>
+            </div>
+            <div class="feature-proj-card">
+              <img src="assets/img/projects_logo/c.png" alt="GunasoBot Logo" />
+              <h3>CipherMe</h3>
+              <p>Custom Encryptor and Decryptor</p>
+            </div>
+            <div class="feature-proj-card">
+              <img src="assets/img/projects_logo/d.png" alt="Sunyantra Logo" />
+              <h3>IoT based SPVM</h3>
+              <p>Sanitary Pad Vending Machine</p>
+            </div>
+          </div>
+          <div class="feature-proj-view-more-container">
+            <button class="feature-proj-view-more">
+              View More
+              <i class="feature-proj-view-more__icon fas fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+      <div class="loading-dots">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <!--======================= SKILLS ========================-->
+      <section class="skills section" id="skills">
+        <h2 class="section__title">Technical Skills</h2>
+        <br />
+        <div class="skills-container">
+          <!-- Programming Languages -->
+          <div class="skills-category">
+            <h3>Programming Languages</h3>
+            <ul class="skills-list">
+              <li class="skill skill-python">
+                <i class="fab fa-python"></i> Python
+              </li>
+              <li class="skill skill-c"><i class="fas fa-code"></i> C</li>
+              <li class="skill skill-html">
+                <i class="fab fa-html5"></i> HTML
+              </li>
+            </ul>
+          </div>
+
+          <!-- Frameworks and Tools -->
+          <div class="skills-category">
+            <h3>Frameworks and Tools</h3>
+            <ul class="skills-list">
+              <li class="skill skill-fastapi">
+                <i class="fas fa-rocket"></i> FastAPI
+              </li>
+              <li class="skill skill-pytorch">
+                <i class="fas fa-brain"></i> PyTorch
+              </li>
+              <li class="skill skill-pandas">
+                <i class="fas fa-table"></i> Pandas
+              </li>
+              <li class="skill skill-docker">
+                <i class="fab fa-docker"></i> Docker
+              </li>
+            </ul>
+          </div>
+
+          <!-- Databases -->
+          <div class="skills-category">
+            <h3>Databases</h3>
+            <ul class="skills-list">
+              <li class="skill skill-postgresql">
+                <i class="fas fa-database"></i> PostgreSQL
+              </li>
+              <li class="skill skill-mongodb">
+                <i class="fas fa-leaf"></i> MongoDB
+              </li>
+            </ul>
+          </div>
+
+          <!-- Other Tools -->
+          <div class="skills-category">
+            <h3>Other Tools</h3>
+            <ul class="skills-list">
+              <li class="skill skill-adobe-illustrator">
+                <i class="fas fa-palette"></i> Adobe Illustrator
+              </li>
+              <li class="skill skill-canva">
+                <i class="fas fa-paint-brush"></i> Canva
+              </li>
+              <li class="skill skill-filmora">
+                <i class="fas fa-video"></i> Wondershare Filmora
+              </li>
+              <li class="skill skill-arduino">
+                <i class="fas fa-microchip"></i> Arduino IDE
+              </li>
+              <li class="skill skill-google-workspace">
+                <i class="fab fa-google"></i> Google Workspace
+              </li>
+              <li class="skill skill-latex">
+                <i class="fas fa-square-root-alt"></i> LaTeX
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Corrected: Properly closed the div -->
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__bg">
+        <div class="footer__container container">
+          <p class="footer__copyright">
+            <a href="index.html" style="text-decoration: none; color: inherit">
+              Copyright © <span id="currentYear"></span> | Prajwal Panth | All
+              Rights Reserved.
+            </a>
+          </p>
+          <div class="footer__social">
+            <a
+              href="https://www.linkedin.com/in/prajwal-panth/"
+              target="_blank"
+              class="footer__social-link"
+            >
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a
+              href="https://github.com/prajwal-panth"
+              target="_blank"
+              class="footer__social-link"
+            >
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a
+              href="https://medium.com/@prajwal_panth"
+              target="_blank"
+              class="footer__social-link"
+            >
+              <i class="fa-brands fa-medium"></i>
+            </a>
+            <a
+              href="https://www.facebook.com/panth.prajwal"
+              target="_blank"
+              class="footer__social-link"
+            >
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Automatically update the year
+      document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+    </script>
+    <!--================== SCROLL TOP ==================-->
+    <a href="#" class="scrollup" id="scroll-up">
+      <i class="uil uil-arrow-up scrollup__icon"></i>
+    </a>
+    <!--================== Core JS ==================-->
+    <script src="../assets/js/theme&swiper.js"></script>
+    <script src="../assets/js/main.js"></script>
+  </body>
+</html>

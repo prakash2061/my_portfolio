@@ -1,0 +1,192 @@
+:root {
+    --hue-color: 240;
+    --first-color: hsl(var(--hue-color), 69%, 61%);
+    --primary-gradient: linear-gradient(45deg,  var(--first-color),  #30b594);
+    --text-glow: 0 0 50px rgba(255,255,255,0.3);
+    --particle-count: 100;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    touch-action: manipulation;
+}
+
+body {
+    background: linear-gradient(45deg, hsl(240, 28%, 12%),hsl(240, 28%, 12%));
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.quantum-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    padding: 20px;
+}
+
+.paradox-text {
+    font-size: clamp(3rem, 8vw, 8rem);
+    font-weight: 900;
+    line-height: 1.2;
+    text-align: center;
+    text-transform: uppercase;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: var(--text-glow);
+    animation: quantumFloat 4s ease-in-out infinite;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.subtitle {
+    position: absolute;
+    bottom: 15vh;
+    color: rgba(255,255,255,0.7);
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    opacity: 0;
+    animation: fadeInOut 6s infinite 2s;
+    text-align: center;
+    max-width: 90%;
+    line-height: 1.5;
+    padding: 0 20px;
+    z-index: 1;
+}
+
+.particle-field {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.particle {
+    position: absolute;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    animation: particleFloat 10s infinite linear;
+    will-change: transform, opacity;
+}
+
+.dimensional-portal {
+    position: fixed;
+    width: min(70vw, 400px);
+    height: min(70vw, 400px);
+    border: 2px solid rgba(78, 205, 196, 0.3);
+    border-radius: 50%;
+    animation: portalSpin 20s linear infinite;
+    filter: blur(30px);
+    opacity: 0.2;
+    z-index: 0;
+}
+
+.philosophy-box {
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    color: rgba(255,255,255,0.4);
+    font-size: clamp(0.8rem, 1.5vw, 1.2rem);
+    max-width: min(90%, 300px);
+    transform: rotate(5deg);
+    transition: all 0.5s ease;
+    line-height: 1.4;
+    z-index: 2;
+}
+
+/* Mobile-first adaptations */
+@media (max-width: 768px) {
+    :root {
+        --text-glow: 0 0 30px rgba(255,255,255,0.2);
+        --particle-count: 50;
+    }
+
+    .quantum-container {
+        perspective: 500px;
+        padding: 10px;
+    }
+
+    .paradox-text {
+        font-size: clamp(2.5rem, 12vw, 4rem);
+        line-height: 1.1;
+    }
+
+    .subtitle {
+        bottom: 10vh;
+        font-size: clamp(0.9rem, 4vw, 1.2rem);
+    }
+
+    .dimensional-portal {
+        filter: blur(20px);
+        width: min(90vw, 300px);
+        height: min(90vw, 300px);
+    }
+
+    .philosophy-box {
+        position: static;
+        margin: 30px auto;
+        transform: rotate(0);
+        text-align: center;
+        max-width: 80%;
+        font-size: 0.9rem;
+        color: rgba(255,255,255,0.6);
+    }
+
+    .philosophy-box:hover {
+        transform: none;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --particle-count: 30;
+    }
+
+    .paradox-text {
+        font-size: 2.2rem;
+    }
+
+    .subtitle {
+        bottom: 8vh;
+        font-size: 0.8rem;
+    }
+
+    .dimensional-portal {
+        filter: blur(15px);
+    }
+}
+
+@keyframes quantumFloat {
+    0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
+    50% { transform: translateY(-10px) rotate(1deg) scale(1.02); }
+}
+
+@keyframes fadeInOut {
+    0%, 100% { opacity: 0; transform: translateY(20px); }
+    50% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes particleFloat {
+    from { transform: translateY(0) scale(0); opacity: 0; }
+    to { transform: translateY(-100vh) scale(2); opacity: 1; }
+}
+
+@keyframes portalSpin {
+    from { transform: rotate(0deg) scale(0.8); }
+    to { transform: rotate(360deg) scale(1.2); }
+}
+
+.paradox-text {
+    /* existing styles */
+    cursor: pointer;
+}

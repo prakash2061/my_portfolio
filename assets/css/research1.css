@@ -1,0 +1,409 @@
+:root {
+  --primary: #2b2d42;
+  --secondary: #4a4e69;
+  --accent: #0077b6;
+  --text: #4a4a4a;
+  --bg: #f8f9fb;
+  --card-bg: #ffffff;
+  --line: #e9ecef;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  font-size: 1rem;
+  -webkit-font-smoothing: antialiased;
+  padding-top: 3.5rem; /* Equal to navigation height */
+  scroll-padding-top: 3.5rem; /* For anchor links */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto; /* Remove top margin */
+  padding: 0 0rem;
+}
+
+.research-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.research__authors {
+  font-size: 0.9rem;
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.research-images {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  aspect-ratio: 16/9;
+  cursor: zoom-in;
+}
+
+.main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.image-counter {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+}
+
+.gallery-images {
+  display: none;
+}
+
+.read-more {
+  align-self: flex-start;
+  color: var(--accent);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: opacity 0.2s ease;
+}
+
+.read-more:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+/* For paper abstract view */
+/* Lightbox Styles */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 2000;
+  touch-action: none;
+}
+
+.lightbox.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90vh;
+  margin: auto;
+  text-align: center;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 1rem;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.lightbox-nav:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.lightbox-prev {
+  left: 2rem;
+}
+
+.lightbox-next {
+  right: 2rem;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 3000;
+}
+
+.lightbox-counter {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 1rem;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+}
+
+/* ===== Research Items ===== */
+.research-item {
+  background: var(--container-color);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.research-title {
+  font-family: "Merriweather", serif;
+  color: var(--title-color);
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.research-meta {
+  color: var(--text-color-light);
+  font-size: 0.875rem;
+}
+
+.research-abstract {
+  color: var(--text-color);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.research-content {
+  background: var(--body-color);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* My Project Presentation */
+/*================== Research Section ==================*/
+.research-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 90%;
+  max-width: 800px;
+  background-color: var(--container-color);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  margin: auto;
+  align-items: stretch; /* Ensures uniform height */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* Adjust padding for mobile */
+@media screen and (max-width: 768px) {
+  .research-section {
+      padding: 1rem 0;
+  }
+}
+
+/* --- Research Item Card --- */
+.research-item {
+  border: 2px solid var(--first-color-second);
+  /* background: transparent; don't make transparent */
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease-in-out;
+  text-align: left; /* Ensure left alignment */
+}
+
+/* Hover Effect */
+.research-item:hover {
+  border-color: rgb(100, 100, 255);
+  box-shadow: 0px 6px 14px rgba(100, 100, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+/* --- Organizer/Location --- */
+.research-org {
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--text-color);
+  margin-bottom: 0.2rem;
+  text-align: left;
+}
+
+/* --- Date --- */
+.research-date {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: var(--text-color-light);
+  margin-bottom: 0.8rem;
+  text-align: left;
+}
+
+/* --- Presentation Details --- */
+.research-details {
+  color: var(--text-color);
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+/* --- Light Theme Variables (example) --- */
+.light-theme {
+  --title-color: #000;
+  --text-color: #333;
+  --text-color-light: #666;
+  --first-color-second: #ccc; /* or your preferred border color */
+}
+
+/* --- Dark Theme Variables (example) --- */
+.dark-theme {
+  --title-color: #fff;
+  --text-color: #ddd;
+  --text-color-light: #bbb;
+  --first-color-second: #555; /* or your preferred border color */
+}
+
+.collaborate {
+  color: white;
+}
+.join {
+  color: white;
+}
+/* --- Responsive --- */
+@media screen and (max-width: 768px) {
+  .research-item {
+    background: var(--container-color);
+    /* padding: 0.5rem; */
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+  }
+  .research-title {
+    font-family: "Merriweather", serif;
+    font-size: 1rem;
+  }
+  .research-details {
+    color: var(--text-color);
+    font-size: 0.7rem;
+    line-height: 1.5;
+  }
+  .research-org {
+    font-size: 0.7rem;
+  }
+  
+  /* --- Date --- */
+  .research-date {
+    font-size: 0.7rem;
+  }
+  .join {
+    font-size: 10px;
+  }
+}
+/* ---------- */
+/* --- Yearly Project Themes Section --- */
+.project-themes-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 90%;
+  max-width: 900px;
+  background-color: var(--container-color);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  margin: auto;
+}
+
+.project-themes-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: var(--title-color);
+}
+
+.project-theme-item {
+  border: 2px solid var(--first-color-second);
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease-in-out;
+  text-align: left;
+  background: var(--container-color);
+}
+
+.project-theme-item:hover {
+  border-color: rgb(100, 100, 255);
+  box-shadow: 0px 6px 14px rgba(100, 100, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.project-theme-year {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--text-color-light);
+  margin-bottom: 0.5rem;
+}
+
+.project-theme-description {
+  color: var(--text-color);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* --- Responsive --- */
+@media screen and (max-width: 768px) {
+  .project-themes-section {
+    padding: 1rem 0;
+  }
+
+  .project-theme-item {
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+
+  .project-themes-title {
+    font-size: 1.5rem;
+  }
+
+  .project-theme-description {
+    font-size: 0.9rem;
+  }
+
+  .project-theme-year {
+    font-size: 1rem;
+  }
+}

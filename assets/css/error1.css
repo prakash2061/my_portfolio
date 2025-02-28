@@ -1,0 +1,295 @@
+:root {
+  /*======= Colors =======*/
+  /* Change Favorite color */
+  --hue-color: 240;
+
+  /*========= HSL Color mode =========*/
+  --first-color: hsl(var(--hue-color), 69%, 61%);
+
+  /*========= Page Specific ===========*/
+  --void-rgb: 0, 0, 0;
+  --color1: var(--first-color);
+  --color2: #00f3ff;
+  --dark-bg: hsl(var(--hue-color), 30%, 8%);
+  --glitch-speed: 0.8s;
+}
+/* before->
+--void-rgb: 0, 0, 0;
+--color1: #00f3ff;
+--color2: #ff003c;
+--glitch-speed: 0.8s; */
+
+@font-face {
+  font-family: "Terminus";
+  src: url("https://fonts.cdnfonts.com/s/14882/TerminusTTF.woff") format("woff");
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--dark-bg);
+  color: var(--color1);
+  font-family: "Terminus", "Courier New", monospace;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+  line-height: 1.4;
+  padding: 1rem;
+}
+
+/* Centered main container */
+.cosmic-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.glitch-container {
+  border: 3px solid var(--color1);
+  box-shadow: 0 0 30px rgba(0, 243, 255, 0.3), 0 0 60px rgba(255, 0, 60, 0.2);
+  background: var(--dark-bg);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.error-code {
+  font-size: clamp(4rem, 10vw, 10rem);
+  line-height: 1;
+  text-shadow: 0 0 10px var(--color1), 0 0 20px var(--dark-bg); /*Before 20px var(--color2)*/
+  margin: 1.5rem 0;
+  position: relative;
+  animation: quantum-glitch var(--glitch-speed) infinite;
+}
+
+.error-code::before,
+.error-code::after {
+  content: "404";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.error-code::before {
+  color: var(--color2);
+  animation: glitch-red var(--glitch-speed) infinite;
+  clip-path: polygon(0 25%, 100% 35%, 100% 65%, 0 55%);
+  z-index: -1;
+}
+
+.error-code::after {
+  color: var(--color1);
+  animation: glitch-blue calc(var(--glitch-speed) * 1.5) infinite reverse;
+  clip-path: polygon(0 65%, 100% 55%, 100% 85%, 0 75%);
+  z-index: -2;
+}
+
+.error-manifest {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  margin: 1.5rem 0;
+  padding: 1rem;
+  border: 1px solid rgba(0, 243, 255, 0.3);
+  background: hsl(240, 28%, 12%);;
+}
+
+.terminal-output {
+  max-width: 800px;
+  width: 100%;
+  margin: 1rem auto;
+  padding: 1.5rem;
+  border: 1px solid var(--color2);
+  background: hsla(var(--hue-color), 69%, 61%, 0.05); /*Before #111*/
+  max-height: 40vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color2) #000;
+}
+
+.terminal-output::-webkit-scrollbar {
+  width: 8px;
+  background: #000;
+}
+
+.terminal-output::-webkit-scrollbar-thumb {
+  background: var(--color2);
+  border-radius: 4px;
+}
+
+.quantum-choices {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  margin-top: 2rem;
+  padding: 1rem;
+}
+
+.reality-button {
+  background: transparent;
+  border: 2px solid var(--color1);
+  color: var(--color1);
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.reality-button:hover {
+  box-shadow: 0 0 15px var(--color1), 0 0 30px var(--color2);
+  transform: translateY(-3px);
+}
+
+/* Glitch Animations */
+@keyframes quantum-glitch {
+  0%,
+  100% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-3px, 5px) skew(-5deg, 2deg);
+  }
+  40% {
+    transform: translate(5px, -3px) skew(3deg, -4deg);
+  }
+  60% {
+    transform: translate(-5px, 2px) rotate(1deg);
+  }
+  80% {
+    transform: translate(2px, -5px) rotate(-1deg);
+  }
+}
+
+@keyframes glitch-red {
+  0% {
+    transform: translate(5px, -3px);
+  }
+  50% {
+    transform: translate(-5px, 3px);
+  }
+  100% {
+    transform: translate(5px, -3px);
+  }
+}
+
+@keyframes glitch-blue {
+  0% {
+    transform: translate(-3px, 5px);
+  }
+  50% {
+    transform: translate(3px, -5px);
+  }
+  100% {
+    transform: translate(-3px, 5px);
+  }
+}
+
+/* Responsive Adjustments for Mid-Sized Screens */
+@media (max-width: 1024px) {
+  .cosmic-wrapper {
+    padding: 1.5rem;
+  }
+  .terminal-output {
+    max-height: 50vh;
+  }
+  .quantum-choices {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+/* Responsive Adjustments for Mobile Devices */
+@media (max-width: 768px) {
+  .cosmic-wrapper {
+    padding: 1rem 0.5rem; /* top/bottom: 1rem; left/right: 0.5rem */
+  }
+  .error-code {
+    font-size: clamp(3rem, 10vw, 6rem);
+    margin: 1rem 0;
+  }
+  .error-manifest {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    padding: 0.5rem;
+    margin: 1rem 0;
+  }
+  .reality-button {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+  .terminal-output {
+    width: 95%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+  .cosmic-wrapper {
+    padding: 1rem 0.5rem; /* Ensure left/right padding is 0.5rem */
+  }
+  .error-code {
+    font-size: clamp(2.5rem, 12vw, 5rem);
+  }
+  .error-manifest {
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
+  }
+  .quantum-choices {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .reality-button {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+  .terminal-output {
+    width: 90%;
+    margin: 0 auto;
+    padding: 0.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/*================== Blog Section ==================*/
+.blog-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 90%;
+  max-width: 800px;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  margin: auto;
+}
+
+/* Adjust padding for mobile */
+@media screen and (max-width: 768px) {
+  .blog-section {
+    padding: 1rem 0;
+  }
+}

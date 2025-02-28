@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Rant on My Journey to Duke (and College Application Guidance) |
+      Professional Blog
+    </title>
+    <meta
+      name="description"
+      content="A detailed account of my journey to Duke University, along with actionable college application guidance for aspiring students."
+    />
+    <!-- Favicon link (PNG) -->
+    <link rel="icon" href="../../assets/img/logo.ico" type="image/x-icon" />
+    <!--==============Page Specific CSS: Top Level==============-->
+    <link rel="stylesheet" href="../../assets/css/blogs2.css" />
+    <!--==============CORE CSS==============-->
+    <link rel="stylesheet" href="../../assets/css/styles.css" />
+    <!-- Necessary Icons: unicons.iconscout for content & cdnjs for footer -->
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <header class="header" id="header">
+      <nav class="nav container">
+        <a href="../../index.html" class="nav__logo">Prajwal Panth</a>
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list grid">
+            <li class="nav__item">
+              <a href="../../index.html" class="nav__link active-link">
+                <i class="uil uil-estate nav__icon"></i>Home
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="../about.html" class="nav__link">
+                <i class="uil uil-user nav__icon"></i>About
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="../projects.html" class="nav__link">
+                <i class="uil uil-scenery nav__icon"></i>Projects
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="../research.html" class="nav__link">
+                <i class="uil uil-flask nav__icon"></i>Research
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="../achievements.html" class="nav__link">
+                <i class="uil uil-trophy nav__icon"></i>Awards & Honors
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="../blogs.html" class="nav__link">
+                <i class="uil uil-pen nav__icon"></i>Blogs
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="../contact.html" class="nav__link">
+                <i class="uil uil-message nav__icon"></i>Contact
+              </a>
+            </li>
+          </ul>
+          <i class="uil uil-times nav__close" id="nav-close"></i>
+        </div>
+
+        <div class="nav__btns">
+          <!-- Theme change button -->
+          <i class="uil uil-moon change-theme" id="theme-button"></i>
+
+          <div class="nav__toggle" id="nav-toggle">
+            <i class="uil uil-apps"></i>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- main-->
+    <main class="main">
+      <!--=================== Blogs ===================-->
+      <div class="blog-container">
+        <!-- Back Button -->
+        <a href="../blogs.html" class="back-button">
+          <i class="fas fa-arrow-left"></i>Back to blog posts list
+        </a>
+
+        <!-- Blog Title -->
+        <h1 class="blog-title">
+          Rant on My Journey to Duke (and Some General College Application
+          Guidance)
+        </h1>
+
+        <!-- Meta Information -->
+        <div class="meta-info">
+          <span>December 19, 2024</span>
+          <span>•</span>
+          <span>20 min read</span>
+          <span class="tag">#CollegeJourney</span>
+        </div>
+
+        <!-- Interactive Icons -->
+        <div class="interactive-icons">
+          <div class="icon like" data-tooltip="Like" onclick="handleLike()">
+            <i class="far fa-thumbs-up"></i>
+          </div>
+          <div class="icon love" data-tooltip="Love" onclick="handleLove()">
+            <i class="far fa-heart"></i>
+          </div>
+          <div
+            class="icon bookmark"
+            data-tooltip="Bookmark"
+            onclick="handleBookmark()"
+          >
+            <i class="far fa-bookmark"></i>
+          </div>
+        </div>
+
+        <!-- Blog Image -->
+        <img
+          src="../../assets/img/blogs/blog7.webp"
+          alt="Liquid Neural Network"
+          class="blog-image"
+        />
+
+        <!-- Blog Content -->
+        <div class="blog-content">
+          <h2>Introduction</h2>
+          <p>
+            Liquid Neural Networks (LNNs) are a promising AI architecture
+            inspired by biological nervous systems. They are designed to
+            dynamically adapt to noisy, real-world data, making them a potential
+            asset in fields such as robotics, healthcare, and industrial IoT.
+          </p>
+
+          <h2>Core Principles</h2>
+          <p>
+            The design of LNNs draws inspiration from biological nervous
+            systems. While some analogies are made with simple organisms like
+            <i>C. elegans</i>, these comparisons serve more as an inspirational
+            model rather than a direct blueprint. Key features include:
+          </p>
+          <ol>
+            <li>
+              <strong>Time-Adaptive Neurons:</strong> Neurons in LNNs adjust
+              their response speed to better handle both sudden changes and
+              gradual trends in input data.
+            </li>
+            <li>
+              <strong>Dynamic Connectivity:</strong> Some LNN models incorporate
+              mechanisms for continuous adaptation of connections, though
+              current implementations typically still rely on established
+              training methods.
+            </li>
+          </ol>
+
+          <h2>Mathematical Formulation</h2>
+          <p>
+            LNNs often use differential equations to model neuron behavior. For
+            example, a simplified representation for a neuron’s state
+            <em>x</em> with input <em>u</em> might be:
+          </p>
+          <p>
+            <code>dx/dt = (-x + f(weights * inputs)) / time_constant</code>
+          </p>
+          <p>
+            In this model, the <em>time_constant</em> can adapt to the dynamics
+            of incoming signals. Note that actual implementations are more
+            complex and this equation is only an illustrative example.
+          </p>
+
+          <h2>Noise Resilience</h2>
+          <p>LNNs are designed to handle noisy data through:</p>
+          <ul>
+            <li>
+              <strong>Dynamic Filtering:</strong> Their continuous-time dynamics
+              can help smooth out fluctuations in sensor readings.
+            </li>
+            <li>
+              <strong>Sparse Connectivity:</strong> While some models utilize
+              sparse connections (often around 5–10% density), this value is
+              illustrative and may vary depending on the specific
+              implementation.
+            </li>
+          </ul>
+          <p>
+            Specific performance metrics, such as the ability to handle certain
+            percentages of corrupted data, are subject to ongoing research and
+            should be interpreted with caution.
+          </p>
+
+          <h2>Advantages vs. Traditional Models</h2>
+          <p>Proponents of LNNs highlight several potential benefits:</p>
+          <ul>
+            <li>
+              Improved adaptability to real-time data without extensive
+              preprocessing.
+            </li>
+            <li>
+              Potential energy efficiency on specialized neuromorphic hardware,
+              though exact gains depend on hardware and use case.
+            </li>
+            <li>
+              Continuous learning capabilities, which may reduce the need for
+              complete retraining when adapting to new tasks.
+            </li>
+          </ul>
+          <p>
+            In contrast, traditional recurrent neural networks often require
+            clean, normalized data and may need to be retrained when facing new
+            challenges.
+          </p>
+
+          <h2>Real-World Applications</h2>
+          <p>
+            While many applications of LNNs remain experimental, potential areas
+            of exploration include:
+          </p>
+          <ul>
+            <li>
+              <strong>Medical Monitoring:</strong> Processing noisy vital
+              signals in intensive care environments.
+            </li>
+            <li>
+              <strong>Agriculture:</strong> Analyzing drone imagery and
+              environmental sensor data under varying conditions.
+            </li>
+            <li>
+              <strong>Industrial IoT:</strong> Monitoring machinery vibrations
+              to distinguish critical faults from normal background noise.
+            </li>
+          </ul>
+          <p>
+            It is important to note that these applications are under active
+            research and have not yet been universally validated.
+          </p>
+
+          <h2>Implementation Guide</h2>
+          <p>
+            Below is a simplified pseudocode example for a liquid time-constant
+            (LTC) neuron:
+          </p>
+          <pre>
+        def ltc_neuron(input, time_constant):
+            state = 0
+            for t in time_steps:
+                derivative = (-state + tanh(input[t])) / time_constant
+                state += derivative * dt
+            return state
+          </pre>
+          <p>
+            Emerging libraries—often built on frameworks like PyTorch—are being
+            developed to facilitate the deployment of LNNs.
+          </p>
+
+          <h2>Challenges & Future Outlook</h2>
+          <p>
+            As with any emerging technology, LNNs face challenges including:
+          </p>
+          <ul>
+            <li>
+              <strong>Debugging Complexity:</strong> The dynamic nature of these
+              networks can complicate troubleshooting.
+            </li>
+            <li>
+              <strong>Computational Demands:</strong> Scaling up these networks
+              for extensive tasks can demand significant computing power.
+            </li>
+          </ul>
+          <p>
+            Future research is focused on refining these models, integrating
+            them with other architectures, and exploring novel applications such
+            as climate modeling and brain-computer interfaces. Computational
+          </p>
+
+          <h2>Conclusion</h2>
+          <p>
+            Liquid Neural Networks offer a promising approach to developing
+            adaptive, energy-efficient AI systems capable of processing noisy,
+            real-world data. Although many aspects of these networks are still
+            under investigation, their potential to dynamically adjust to
+            changing environments represents an exciting frontier in AI
+            research.
+          </p>
+
+          <div class="blockquote">
+            <p>
+              Watch
+              <a
+                href="https://youtu.be/RI35E5ewBuI?si=OKKxabWvg93lF3-E"
+                style="color: inherit; text-decoration: none"
+              >
+                "Liquid Neural Networks | Ramin Hasani | TEDxMIT"
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!--================== Footer ===============-->
+    <footer class="footer">
+      <div class="footer__bg">
+        <div class="footer__container container">
+          <p class="footer__copyright">
+            <a
+              href="../index.html"
+              style="text-decoration: none; color: inherit"
+            >
+              Copyright © <span id="currentYear"></span> | Prajwal Panth | All
+              Rights Reserved.
+            </a>
+          </p>
+          <div class="footer__social">
+            <a
+              href="https://www.linkedin.com/in/prajwal-panth/"
+              target="_blank"
+              class="footer__social-link"
+            >
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a
+              href="https://github.com/prajwal-panth"
+              target="_blank"
+              class="footer__social-link"
+            >
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a
+              href="https://medium.com/@prajwal_panth"
+              target="_blank"
+              class="footer__social-link"
+            >
+              <i class="fa-brands fa-medium"></i>
+            </a>
+            <a
+              href="https://www.facebook.com/panth.prajwal"
+              target="_blank"
+              class="footer__social-link"
+            >
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      // Automatically update the year
+      document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+    </script>
+    <!--================== SCROLL TOP ==================-->
+    <a href="#" class="scrollup" id="scroll-up">
+      <i class="uil uil-arrow-up scrollup__icon"></i>
+    </a>
+    <!--================Page Specific JS================-->
+    <script src="../../assets/js/blogs2.js"></script>
+    <!--================== Core JS ==================-->
+    <script src="../../assets/js/theme&swiper.js"></script>
+    <script src="../../assets/js/main.js"></script>
+  </body>
+</html>
